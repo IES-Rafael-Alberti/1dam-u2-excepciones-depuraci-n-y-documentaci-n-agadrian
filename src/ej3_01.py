@@ -6,18 +6,23 @@ Ejercicio 2.3.1
 def mostrarAños(edad):
     for i in range(1, edad+1):
         print(i)
-    if edad <= 0:
-        raise ValueError ("La edad debe ser mayor a 0")
-    
+
+
 
 def main():
-    try:
-        edad = int(input("Introduce edad: "))
-        mostrarAños(edad)
-    except:
-        print("Debes introducir un numero")
+    ok = False
+    while not ok:
+        try:
+            edad = int(input("Introduce edad: "))
 
-
+            if edad <= 0:
+                print("La edad debe ser un número positivo.")
+            else:
+                mostrarAños(edad)
+                ok = True
+        except ValueError:
+            print("Debes introducir un numero")
+    
 
 if __name__ == "__main__":
     main()
