@@ -17,16 +17,33 @@ def pedirEnteroPositivo(msj: str) -> int:
 
     num = None
 
-    while num is None:
+    while num is None or num < 0:
         try:
             num = int(input(msj))
             if num < 0:
-                print("No puede ser negativo. Introduce numero valido: ")
-                num = None
-            else:
-                return num
+                raise ValueError
         except ValueError:
-            print("ERROR - Introduce numero valido: ")
+            msj = "ERROR - Introduce numero valido: "
+    
+    return num
+
+
+def comprobarEnteroPositivo(entrada: str) -> int:
+    """
+    Pide un numero por consola hasta que es valido (entero positivo)
+
+    Args:
+        msj (str): mensaje a mostrar en el input que pide el numero
+
+    Retorna:
+        int: del numero introducido
+    """
+    num = int(entrada)
+
+    if num < 0:
+        raise ValueError("**Error** número negativo.")
+    
+    return num
 
 
 def numImpares(num):
@@ -39,7 +56,7 @@ def numImpares(num):
     Retorna:
         str: cadena de texto de los numeros impares entre 1 - num
     """
-    
+
     listaNumeros = ''
 
     for i in range(1, num+1):
@@ -54,7 +71,18 @@ def numImpares(num):
 
 def main():
     # Pedir entero positivo por consola
-    num = pedirEnteroPositivo("Introduce un numero entero positivo: ")
+    #num = pedirEnteroPositivo("Introduce un numero entero positivo: ")
+
+    num = None
+    while num is None or num < 0:
+        entrada = input("Introduce un numero entero positivo: ")
+        
+        try:
+            num = comprobarEnteroPositivo(entrada)
+        except ValueError as e:
+            print("ERROR - " + str(e))
+        except Exception as e:
+            print("ERROR - " + str(e))
 
     # Obtener numeros impares desde el 1 hasta num
     listaNumeros = numImpares(num)
