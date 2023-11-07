@@ -9,6 +9,7 @@ def pedirEdad(msj: str) -> int:
 
     Args:
         msj (str): mensaje mostrado para pedir edad
+        
     Retorna:
         int: la edad introducida
     """
