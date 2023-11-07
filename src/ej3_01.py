@@ -17,7 +17,7 @@ def pedirEdad(msj: str) -> int:
     while edad is None:
         try:
             edad = int(input(msj))
-            if edad < 0:
+            if edad < 0 or edad > 125:
                 print("Error, debe introducir una edad valida: ")
                 edad = None
             else:
