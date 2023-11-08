@@ -22,7 +22,7 @@ def comprobarEnteroPositivo(entrada: str) -> int:
     return num
 
 
-def numImpares(num):
+def numImpares(num:int) -> str:
     """
     Calcula y almacena los numeros impares entre el 1 y el numero pasado como argumento (num)
 

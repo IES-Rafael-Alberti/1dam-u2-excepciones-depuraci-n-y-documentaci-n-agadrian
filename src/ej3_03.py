@@ -32,7 +32,7 @@ def pedirEnteroPositivo(msj: str) -> int:
 
 
 
-def cuentaAtras(num: int):
+def cuentaAtras(num: int) -> str:
     """
     Almacena en variable numeros de 1 en 1, desde (num) hasta 0
 
