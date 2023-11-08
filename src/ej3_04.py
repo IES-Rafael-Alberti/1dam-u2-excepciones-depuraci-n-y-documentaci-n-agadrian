@@ -5,21 +5,31 @@ Escribir un programa que pida al usuario un número entero, si la entrada no es 
 """
 
 
-def pedirEntero(msj: str) -> int:
-    num = None
+def comprobarEntero(numero: str) -> int:
+    """
+    Transforma si es posible a int
 
-    try:
-        num = int(input(msj))
+    Args:
+        numero (str): valor a convertir a int
+    
+    Retorna:
+        int:
+            el valor transformado a int
+            None si no se ha podido transformar
+    """
 
-    except Exception as e :
-        print("La entrada no es correcta. Error producido: ") 
-        print(e)
-        
+    num = int(numero)
+
+    return num
 
 
 def main():
-    num = pedirEntero("Introduce un numero entero: ")
-    
+    numero = input("Introduce un numero entero: ")
+
+    try:    
+        comprobarEntero(numero)
+    except ValueError as e:
+        print("La entrada no es correcta: " + str(e))
 
 
 

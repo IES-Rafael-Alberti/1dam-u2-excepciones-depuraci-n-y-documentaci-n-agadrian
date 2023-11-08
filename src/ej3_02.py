@@ -4,30 +4,6 @@ Ejercicio 2.3.2
 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números impares desde 1 hasta ese número separados por comas.
 """
 
-def pedirEnteroPositivo(msj: str) -> int:
-    """
-    Pide un numero por consola hasta que es valido (entero positivo)
-
-    Args:
-        msj (str): mensaje a mostrar en el input que pide el numero
-
-    Retorna:
-        int: del numero introducido
-    """
-
-    num = None
-
-    while num is None or num < 0:
-        try:
-            num = int(input(msj))
-            if num < 0:
-                raise ValueError
-        except ValueError:
-            msj = "ERROR - Introduce numero valido: "
-    
-    return num
-
-
 def comprobarEnteroPositivo(entrada: str) -> int:
     """
     Pide un numero por consola hasta que es valido (entero positivo)
@@ -70,13 +46,10 @@ def numImpares(num):
 
 
 def main():
-    # Pedir entero positivo por consola
-    #num = pedirEnteroPositivo("Introduce un numero entero positivo: ")
-
     num = None
+
     while num is None or num < 0:
         entrada = input("Introduce un numero entero positivo: ")
-        
         try:
             num = comprobarEnteroPositivo(entrada)
         except ValueError as e:

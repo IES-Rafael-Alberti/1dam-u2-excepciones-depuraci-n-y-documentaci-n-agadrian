@@ -4,7 +4,32 @@ Ejercicio 2.3.3
 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. Deberá solicitar el número hasta introducir uno correcto.
 """
 
-from ej3_02 import pedirEnteroPositivo
+
+def pedirEnteroPositivo(msj: str) -> int:
+    """
+    Pide un numero por consola hasta que es valido (entero positivo)
+
+    Args:
+        msj (str): mensaje a mostrar en el input que pide el numero
+
+    Retorna:
+        int: del numero introducido
+    """
+
+    num = None
+
+    # Si es < 0, lanza error y vuelve a preguntar
+    while num is None or num < 0:
+        try:
+            num = int(input(msj))
+            if num < 0:
+                raise ValueError
+            
+        except ValueError:
+            msj = "ERROR - Introduce numero validoo: "
+    
+    return num
+
 
 
 def cuentaAtras(num: int):
