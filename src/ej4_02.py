@@ -11,14 +11,17 @@ print(obtenerListaNumeros)
 
 
 def ordenarLista(lista):
-    for i in range(0, len(lista)):
+    # Bucle padre e hijo se repetira 1 vez menos del total de numeros en la lista
+    for i in range(0, len(lista)-1):
         for j in range(0, len(lista)-1):
             if lista[j] > lista[j+1]:
-                lista[j] == lista[j+1]
+                aux = lista[j]
+                lista[j] = lista[j+1]
+                lista[j+1] = aux
     return lista
 
 def main():
-    lista = [1,4,6,2,10]
+    lista = [1,8,6,2,9,3,10,7]
     listaOrdenada = ordenarLista(lista)
 
     print(listaOrdenada)
