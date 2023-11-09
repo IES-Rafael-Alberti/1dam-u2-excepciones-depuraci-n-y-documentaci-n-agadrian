@@ -10,7 +10,19 @@ Por último, pide un número (entre 1 y 100) y el programa debe decir si está e
 
 import random
 
-def CalcularMaxMin(lista):
+def CalcularMaxMin(lista: list):
+    """
+    Calcula el maximo y minimo de una lista 
+
+    Args:
+        list: lista de numeros
+    
+    Retorna:
+            str: maximo de la lista
+            str: minimo de la lista
+
+
+    """
     return (max(lista),min(lista))
 
 
@@ -20,15 +32,18 @@ numeros = []
 for i in range(0,5):
     numeros.append(random.randint(1,100))
 
+# Asignar y mostrar los valores retornados por la funcion
 vmax,vmin = CalcularMaxMin (numeros)
 print("El valor máximo es ",vmax)
 print("El valor mínimo es ",vmin)
 
+# Pedir numero entre 1-100
 numero = int(input("Dime un número del 1 al 100: "))
 while numero < 1 or numero > 100:
     print("El número debe estar entre 1 y 100: ")
     numero = int(input())
 
+# Comprobar si el numero esta en la lista
 if numero in numeros:
     print("El número está en la lista")
 else:
