@@ -10,7 +10,7 @@ Por último, pide un número (entre 1 y 100) y el programa debe decir si está e
 
 import random
 
-def CalcularMaxMin(lista: list):
+def calcularMaxMin(lista: list):
     """
     Calcula el maximo y minimo de una lista 
 
@@ -33,7 +33,7 @@ for i in range(0,5):
     numeros.append(random.randint(1,100))
 
 # Asignar y mostrar los valores retornados por la funcion
-vmax,vmin = CalcularMaxMin (numeros)
+vmax,vmin = calcularMaxMin (numeros)
 print("El valor máximo es ",vmax)
 print("El valor mínimo es ",vmin)
 

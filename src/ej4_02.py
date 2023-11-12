@@ -20,7 +20,7 @@ def ordenarLista(lista) -> list:
     return lista
 
 
-def obtenerListaNumeros(lista):
+def obtenerListaNumeros(lista: list):
     """
     Almacena en una variable, los numeros de forma mas legible, separados por comas
 
@@ -30,7 +30,7 @@ def obtenerListaNumeros(lista):
     Retorna:
         str: numeros de la ordenados seprados por coma 
     """
-    ordenado = " "
+    ordenado = ""
 
     for i in lista:
         if i == lista[-1]:
@@ -42,7 +42,7 @@ def obtenerListaNumeros(lista):
 
 
 def main():
-    lista = [1,8,6,4,45,23,56,34,34]
+    lista = [1,8,6,4,45,23,56,34,12]
     listaOrdenada = ordenarLista(lista)
     listaFormateada = (obtenerListaNumeros(listaOrdenada))
 
